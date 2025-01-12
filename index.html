@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #282828;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Full-screen particles background */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Make sure it stays behind all other content */
+        }
+
+        h1 {
+            margin-top: 10%;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            font-style: italic;
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 0 10px;
+        }
+
+        .game-card {
+            width: 150px;
+            text-align: center;
+            background-color: #444;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .game-card b {
+            display: block;
+            margin-top: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #7b5bff;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Heading -->
+    <h1>L Unblocked Games</h1>
+
+    <!-- Game Links -->
+    <div class="game-container">
+        <!-- Game Cards -->
+        <div class="game-card">
+            <img src="./icons/forms.jpg" alt="Game Logo">
+            <b>Game Request</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> REOPENED</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/bitlife.jpg" alt="Game Logo">
+            <b>Bitlife</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> NEW</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/subway.webp" alt="Game Logo">
+            <b>Subway Surfers</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> NEW</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/snow.jpeg" alt="Game Logo">
+            <b>Snow Rider 3d</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> NEW</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/stickmanhook.jpg" alt="Game Logo">
+            <b>Stickman Hook</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/gunspin.png" alt="Game Logo">
+            <b>Gunspin</b>
+            <div class="badge"><i class="fa fa-star" aria-hidden="true"></i> NEW/POPULAR</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/paperio.webp" alt="Game Logo">
+            <b>Paper.io 2</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/volley.png" alt="Game Logo">
+            <b>Volley Random</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/rooftopsnipers.png" alt="Game Logo">
+            <b>Rooftop Snipers</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/snakeio.png" alt="Game Logo">
+            <b>Snake.io</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/soccerrandom.webp" alt="Game Logo">
+            <b>Soccer Random</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/arenaking.png" alt="Game Logo">
+            <b>Survival Race: Arena King</b>
+            <div class="badge"><i class="fa fa-star" aria-hidden="true"></i> POPULAR</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/driftboss.png" alt="Game Logo">
+            <b>Drift Boss</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/drifthunters.png" alt="Game Logo">
+            <b>Drift Hunters</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/basketrandom.webp" alt="Game Logo">
+            <b>Basket Random</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/blockblast.png" alt="Game Logo">
+            <b>Block Blast</b>
+            <div class="badge"><i class="fa fa-star" aria-hidden="true"></i> POPULAR</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/1v1.webp" alt="Game Logo">
+            <b>1v1.lol</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/snowball.png" alt="Game Logo">
+            <b>Snowball.io</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/ovo.png" alt="Game Logo">
+            <b>OvO</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/basketball-stars.png" alt="Game Logo">
+            <b>Basketball Stars</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/Rocketpult.webp" alt="Game Logo">
+            <b>Rocket Pult</b>
+            <div class="badge"><i class="fa fa-star"></i> POPULAR</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/unicycle-hero.webp" alt="Game Logo">
+            <b>Unicycle Hero</b>
+            <div class="badge"><i class="fa fa-star"></i> POPULAR</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/slope.webp" alt="Game Logo">
+            <b>Slope</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> RECOMMENDED</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/minecraft.webp" alt="Game Logo">
+            <b>Minecraft</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> RECOMMENDED</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/cookie.webp" alt="Game Logo">
+            <b>Cookie Clicker</b>
+            <div class="badge"><i class="fa-solid fa-star"></i> POPULAR</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/crossyroad.webp" alt="Game Logo">
+            <b>Crossyroad</b>
+            <div class="badge"><i class="fa-solid fa-star"></i></div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/eatio.webp" alt="Game Logo">
+            <b>Eat.io</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/eggy-car.webp" alt="Game Logo">
+            <b>Eggy Car</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/flappy.webp" alt="Game Logo">
+            <b>Flappy Bird</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/impossiblequiz.webp" alt="Game Logo">
+            <b>Impossible Quiz</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/kitchen-gun-game.webp" alt="Game Logo">
+            <b>Kitchen Gun Game</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/pong.webp" alt="Game Logo">
+            <b>Multiplayer Pong</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> 2 Player</div>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/pong.webp" alt="Game Logo">
+            <b>Pong</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/retrobowl.webp" alt="Game Logo">
+            <b>Retro Bowl</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/toe2.webp" alt="Game Logo">
+            <b>Tic Tac Toe</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/whg.webp" alt="Game Logo">
+            <b>World's hardest game</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/whg.webp" alt="Game Logo">
+            <b>World's hardest game 2</b>
+        </div>
+        
+        <div class="game-card">
+            <img src="./icons/skibidi.jpeg" alt="Game Logo">
+            <b>Skibidi Toilet Rampage</b>
+            <div class="badge"><i class="fa-solid fa-user"></i> SKIBIDI</div>
+        </div>
+        
+
+    <!-- Footer -->
+    <footer>
+        <p>L Unblocked Games</p>
+        <p>Please do not play these games in school without permission. Doing so can result in losing a computer or other school punishment.</p>
+    </footer>
+
+    <!-- Particles.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json',
+            function () {
+                console.log('particles.json loaded...');
+            });
+    </script>
+
+    <!-- Additional JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+
+</html>
